@@ -10,9 +10,9 @@ export const Album = (props) => {
   return (
     <div className="albumCard">
       <div className="image-container">
-        <img src={props.data.images[0].url}>
+        <img src={props.data.images[0].url} className="picture">
         </img>
-        <div className="middle">
+        <div className="icon-container">
           <Icons />
         </div>
       </div>

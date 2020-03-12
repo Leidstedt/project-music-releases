@@ -19,13 +19,41 @@ display: flex;
 flex-direction: row;
 }
 
-.albumCard img {
-width: 320px;
-height: 320px;
-}
+.album-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  }
 
 
-.middle {
+/* ALBUM CARD: Contains the image (picture), title and artist */
+  .albumCard {
+  width: 320px;
+  height: 380px;
+  margin: 20px;
+  }
+
+  .albumCard img {
+    width: 320px;
+    height: 320px;
+    }
+  
+/* IMAGE CONTAINER: Contains the image (picture) and the icon-container*/
+.image-container {
+  position: relative;
+  display: block;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  }
+
+  /*Shows the album picture*/
+  .picture {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+.icon-container {
 transition: .5s ease;
 opacity: 0;
 position: absolute;
@@ -37,39 +65,14 @@ text-align: center;
 display: flex;
 }
   
-.image-container {
-position: relative;
-display: block;
+/* Hover effects */
+.picture:hover {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.image-container:hover .icon-container {
 opacity: 1;
-transition: .5s ease;
-backface-visibility: hidden;
-}
-
-.image-container:hover {
-opacity: 0.3;
-cursor: pointer;
-}
-
-.image-container:hover .middle {
-opacity: 1;
-}
-
-.middle img:hover {
-opacity: 1;
-
-}
-
-.album-wrapper {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-}
-
-.albumCard {
-width: 320px;
-height: 380px;
-/* border: 2px solid blue; */
-margin: 20px;
 }
 
 .icons {
@@ -86,10 +89,6 @@ height: 25px;
 font-size: 16px;
 }
 
-.icons svg path {
-  fill: white !important;
-}
-
 .icons .play-icon {
 width: 55px;
 height: 55px;
@@ -99,7 +98,6 @@ transition: transform 1s;
 .play-icon:hover {
 transform: scale(1.2)
 }
-
 
 header {
 border-bottom: 2px solid #2b2a2a;
